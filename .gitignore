@@ -1,0 +1,19 @@
+# Build files and directories
+*.iml
+.gradle
+/build
+/*/build
+/captures
+
+# IDE settings
+.idea/
+.gradle/
+local.properties
+*.hprof
+.DS_Store
+
+# Android Studio / IntelliJ
+.navigation/
+captures/
+.externalNativeBuild
+.cxx/
