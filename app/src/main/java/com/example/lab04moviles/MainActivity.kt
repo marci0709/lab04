@@ -3,27 +3,29 @@ package com.example.lab04moviles
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.lab04moviles.ui.theme.Lab04movilesTheme
+import com.example.lab04moviles.ui.theme.Lab04MovilesTheme
+
+// Importaciones adicionales para los componentes
+import androidx.compose.material3.Card
+import androidx.compose.material3.Button
+import androidx.compose.material3.Switch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            Lab04movilesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            Lab04MovilesTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Greeting("Android")
                 }
             }
         }
@@ -38,10 +40,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    Lab04movilesTheme {
-        Greeting("Android")
-    }
+fun DemoCard() {
+    Card { Text("Componente Card") }
+}
+
+@Composable
+fun DemoButton() {
+    Button(onClick = {}) { Text("Componente Button") }
+}
+
+@Composable
+fun DemoSwitch() {
+    Switch(checked = true, onCheckedChange = {})
 }
